@@ -22,23 +22,15 @@ internal class Program
 
         double media = studenti.Average(studente => studente.voto);
 
-        Console.WriteLine($"Media voti: {media}\n");
+        Console.WriteLine($"Media Voti: {media}");
 
         //---------------------------------------------------------------------------------------------
 
+        var studenteConVotoPiùAlto = studenti.OrderBy(studente => studente.voto).Last();
 
-        int votoMaggiore = studenti.Max(studente => studente.voto);
-
-        Console.WriteLine($"Il voto maggiore: {votoMaggiore}\n");
-
-        //---------------------------------------------------------------------------------------------
+        Console.WriteLine($"Lo studente con il voto più alto è {studenteConVotoPiùAlto} ");
 
 
-        var studenteConVotoMassimo = studenti.OrderBy(studente => studente.voto).Last().nome;
 
-        Console.WriteLine($"Lo studente con il voto maggiore è : {studenteConVotoMassimo} con il voto: {votoMaggiore}\n");
-       
     }
-
-
 }
